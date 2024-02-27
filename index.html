@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Detector</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Add any additional stylesheets or libraries for responsiveness -->
+    <style>
+        /* Add your additional styles for responsiveness here */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Improved Navigation bar styles */
+        .topnav {
+            background-color: #000000;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .topnav a:hover {
+            background-color: #333333;
+        }
+
+        /* Updated Container styles */
+        .container {
+            max-width: 800px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Updated Button styles */
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #0ed74b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #569e7f;
+        }
+
+        /* Improved Footer styles */
+        footer {
+            background-color: black;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .faq-dropdown {
+            margin-top: 10px;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    </style>
+    <link rel="icon" href="https://th.bing.com/th/id/OIG.E7m3JPvIx7E7IEnaSziz?w=270&h=270&c=6&r=0&o=5&dpr=1.4&pid=ImgGn"
+        type="image/x-icon">
+    <link rel="shortcut icon"
+        href="https://th.bing.com/th/id/OIG.E7m3JPvIx7E7IEnaSziz?w=270&h=270&c=6&r=0&o=5&dpr=1.4&pid=ImgGn"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-ez5eHVmWtFZl1F4gUJufMcH5KVbIqqf0XFAwDsYcsqW8c1wPzS/g9ifL9cugxxi" crossorigin="anonymous">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="content">
+        <div class="container">
+            <h1>Deepfake Detection</h1>
+            <form id="deepfakeForm">
+                <label for="image">Upload an image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                <button type="button" onclick="detectDeepfake()">Detect</button>
+                <div class="loading-spinner" id="loadingSpinner"></div>
+            </form>
+            <div id="result"></div>
+        </div>
+
+        <div class="container">
+            <h1>Chat with me</h1>
+            <form id="deepfakeForm">
+                <button type="button" onclick="window.location.href='chatbot.html'">Open Chatbot</button>
+            </form>
+        </div>
+
+        <div class="additional-section">
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-dropdown">
+                    <div class="faq-question" onclick="toggleAnswer('faq1')">
+                        What is a deepfake?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq1-answer">
+                        <p>A deepfake is a manipulated or synthesized media (usually video) that presents fabricated content, often using artificial intelligence techniques to replace a person's likeness with another.</p>
+                    </div>
+            
+                    <div class="faq-question" onclick="toggleAnswer('faq2')">
+                        How can I detect a deepfake?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq2-answer">
+                        <p>Detecting deepfakes can involve using specialized software, analyzing facial inconsistencies, and considering contextual clues. However, it's an evolving field, and detection methods may vary.</p>
+                    </div>
+            
+                    <div class="faq-question" onclick="toggleAnswer('faq3')">
+                        What are the implications of deepfakes?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq3-answer">
+                        <p>The implications of deepfakes include misinformation, privacy concerns, and potential harm to individuals' reputations. They also raise ethical questions about the use of synthetic media.</p>
+                    </div>
+            
+                    <div class="faq-question" onclick="toggleAnswer('faq4')">
+                        How can I protect myself from deepfakes?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq4-answer">
+                        <p>Protecting against deepfakes involves being cautious about sharing personal information online, using reputable sources, and staying informed about advancements in deepfake detection.</p>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="articles-section">
+                <h2>Related Articles</h2>
+                <div class="article-card">
+                    <a href="https://www.bbc.com/news/technology-62497203">How to spot a deepfake video</a>
+                </div>
+                <div class="article-card">
+                    <a href="https://www.nytimes.com/2022/12/30/technology/deepfake-detection.html">The Race to Find
+                        Deepfakes</a>
+                </div>
+                <div class="article-card">
+                    <a href="https://www.wired.com/story/deepfakes-are-now-making-business-pitches/">Deepfakes Are Now
+                        Making Business Pitches</a>
+                </div>
+            </div>
+
+            <div class="study-section">
+                <h2>Study Articles</h2>
+                <div class="article-card">
+                    <a href="https://ieeexplore.ieee.org/document/9721302">Deepfake Detection: A Systematic Literature
+                        Review</a>
+                </div>
+                <div class="article-card">
+                    <a href="https://ieeexplore.ieee.org/document/10077834/">Deep Fake Generation and Detection: Issues,
+                        Challenges, and Solutions</a>
+                </div>
+                <div class="article-card">
+                    <a href="https://ieeexplore.ieee.org/document/10354308">Deepfake Generation and Detection: Case
+                        Study and Challenges</a>
+                </div>
+                <div class="article-card">
+                    <a href="https://link.springer.com/article/10.1007/s13735-022-00241-w">A literature review and
+                        perspectives in deepfakes: generation, detection, and applications</a>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+
+            <div class="footer2">
+
+                <div class="services">
+                    <div class="heading">Services</div>
+                    <div class="div">Contact Information</div>
+                    <div class="div">FAQs</div>
+                    <div class="div">Service Terms and Condition</div>
+                    <div class="div">Others</div>
+                </div>
+                <div class="Company">
+                    <div class="heading">Company</div>
+                    <div class="div">Complaint</div>
+                    <div class="div">Careers</div>
+                    <div class="div">Affiliate Marketing</div>
+                    <div class="div">Support</div>
+                </div>
+                <div class="Get Help">
+                    <div class="heading">Get Help</div>
+                    <div class="div">Help Center</div>
+                    <div class="div">Privacy Policy</div>
+                    <div class="div">Terms</div>
+                    <div class="div">Login</div>
+                </div>
+            </div>
+            <div class="footer3">Copyright © <h4>NEXUS SOLUTIONS</h4> 2024-2025</div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>
+            function toggleAnswer(faqId) {
+                var answer = document.getElementById(faqId + '-answer');
+                answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+            }
+
+        </script>
+</body>
+
+</html>

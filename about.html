@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Deepfake Detector</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Add any additional stylesheets or libraries for responsiveness -->
+    <style>
+        /* Add your additional styles for responsiveness here */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .topnav {
+            background-color: #000000;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .topnav a:hover {
+            background-color: #333333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #0ed74b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #569e7f;
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .footer2,
+        .footer3 {
+            margin: 10px;
+        }
+
+        .footer2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer2 .heading {
+            font-weight: bold;
+        }
+
+        /* Add any specific styles for the about page here */
+        .about-section {
+            text-align: left;
+        }
+
+        .about-section p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            align-items: center;
+            color: white;
+        }
+
+        .footer1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .social-media a {
+            color: white;
+            margin: 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .social-media a ion-icon {
+            color: white;
+            background-color: black;
+        }
+
+        .social-media a:hover ion-icon {
+            color: red;
+            transform: translateY(5px);
+        }
+
+        .footer2 {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+            text-decoration: none;
+            flex-wrap: wrap;
+        }
+
+        .footer0 {
+            font-weight: 1200;
+            transition-duration: 1s;
+        }
+
+        .footer0:hover {
+            color: rgb(243, 168, 7);
+        }
+
+        .footer2 .heading {
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .footer3 {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer2 .heading:hover {
+            color: rgb(243, 168, 7);
+        }
+
+        .footer2 .div:hover {
+            transform: scale(1.05);
+        }
+
+        .footer3 h4 {
+            margin: 0 10px;
+        }
+
+        .footer2 div {
+            margin: 10px;
+        }
+
+        .menu {
+            visibility: hidden;
+        }
+
+        .heading1 .ham:active {
+            color: red;
+        }
+
+        .items {
+            overflow: hidden;
+        }
+
+        .ham,
+        .close {
+            cursor: pointer;
+        }
+    </style>
+    <link rel="icon" href="https://th.bing.com/th/id/OIG.E7m3JPvIx7E7IEnaSziz?w=270&h=270&c=6&r=0&o=5&dpr=1.4&pid=ImgGn"
+        type="image/x-icon">
+    <link rel="shortcut icon"
+        href="https://th.bing.com/th/id/OIG.E7m3JPvIx7E7IEnaSziz?w=270&h=270&c=6&r=0&o=5&dpr=1.4&pid=ImgGn"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-ez5eHVmWtFZl1F4gUJufMcH5KVbIqqf0XFAwDsYcsqW8c1wPzS/g9ifL9cugxxi" crossorigin="anonymous">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="content">
+        <div class="container about-section">
+            <h1>About Us</h1>
+            <p>Welcome to Deepfake detector, where we are committed to safeguarding the truth in a digital era filled
+                with advanced technologies like deepfake manipulation. Our mission is to empower individuals and
+                organizations with tools to distinguish reality from deception.</p>
+
+            <p>In today's interconnected world, the rise of deepfake technology poses significant challenges to trust
+                and authenticity. At Deepfake detector, we recognize the importance of ensuring that the content you
+                encounter is genuine and untainted. Our team of dedicated professionals is passionate about developing
+                cutting-edge solutions to detect and combat the ever-evolving threat of deepfakes.</p>
+
+            <h2>Why Choose Deepfake detector?</h2>
+
+            <ul>
+                <li><strong>Advanced Detection Technology:</strong> Our deepfake detection algorithms leverage
+                    state-of-the-art technology to identify even the most sophisticated manipulations, providing you
+                    with a reliable defense against deceptive content.</li>
+
+                <li><strong>User-Friendly Interface:</strong> We believe that technology should be accessible to
+                    everyone. Our user-friendly interface ensures that individuals with varying levels of technical
+                    expertise can easily utilize our tools to verify the authenticity of media.</li>
+
+                <li><strong>Continuous Innovation:</strong> The digital landscape is constantly evolving, and so are we.
+                    Our team is committed to staying ahead of the curve, continuously improving our detection
+                    capabilities to counter emerging threats.</li>
+
+                <li><strong>Educational Resources:</strong> Understanding deepfake technology is crucial in the fight
+                    against misinformation. We provide educational resources to help users comprehend the risks
+                    associated with deepfakes and stay informed about the latest developments in the field.</li>
+            </ul>
+
+            <p>Join us in the pursuit of truth and authenticity. At Deepfake detector, we are dedicated to building a
+                safer digital environment for all.</p>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer2">
+            <div class="services">
+                <div class="heading">Services</div>
+                <div class="div">Contact Information</div>
+                <div class="div">FAQs</div>
+                <div class="div">Service Terms and Condition</div>
+                <div class="div">Others</div>
+            </div>
+            <div class="Company">
+                <div class="heading">Company</div>
+                <div class="div">Complaint</div>
+                <div class="div">Careers</div>
+                <div class="div">Affiliate Marketing</div>
+                <div class="div">Support</div>
+            </div>
+            <div class="Get Help">
+                <div class="heading">Get Help</div>
+                <div class="div">Help Center</div>
+                <div class="div">Privacy Policy</div>
+                <div class="div">Terms</div>
+                <div class="div">Login</div>
+            </div>
+        </div>
+        <div class="footer3">Copyright © <h4>NEXUS SOLUTIONS</h4> 2024-2025</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Add your additional JavaScript for responsiveness here
+    </script>
+</body>
+
+</html>
