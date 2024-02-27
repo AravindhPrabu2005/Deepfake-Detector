@@ -16,6 +16,32 @@
             margin: 0;
         }
 
+        .video-section {
+            margin-top: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .video-container iframe {
+            margin-bottom: 20px;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+            color: green;
+            /* Default color for not detected message */
+        }
+
+        #result.warning {
+            color: red;
+            /* Color for warning (deepfake detected) message */
+        }
+
         .content {
             flex: 1;
         }
@@ -147,35 +173,43 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer" id="faq1-answer">
-                        <p>A deepfake is a manipulated or synthesized media (usually video) that presents fabricated content, often using artificial intelligence techniques to replace a person's likeness with another.</p>
+                        <p>A deepfake is a manipulated or synthesized media (usually video) that presents fabricated
+                            content, often using artificial intelligence techniques to replace a person's likeness with
+                            another.</p>
                     </div>
-            
+
                     <div class="faq-question" onclick="toggleAnswer('faq2')">
                         How can I detect a deepfake?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer" id="faq2-answer">
-                        <p>Detecting deepfakes can involve using specialized software, analyzing facial inconsistencies, and considering contextual clues. However, it's an evolving field, and detection methods may vary.</p>
+                        <p>Detecting deepfakes can involve using specialized software, analyzing facial inconsistencies,
+                            and considering contextual clues. However, it's an evolving field, and detection methods may
+                            vary.</p>
                     </div>
-            
+
                     <div class="faq-question" onclick="toggleAnswer('faq3')">
                         What are the implications of deepfakes?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer" id="faq3-answer">
-                        <p>The implications of deepfakes include misinformation, privacy concerns, and potential harm to individuals' reputations. They also raise ethical questions about the use of synthetic media.</p>
+                        <p>The implications of deepfakes include misinformation, privacy concerns, and potential harm to
+                            individuals' reputations. They also raise ethical questions about the use of synthetic
+                            media.</p>
                     </div>
-            
+
                     <div class="faq-question" onclick="toggleAnswer('faq4')">
                         How can I protect myself from deepfakes?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer" id="faq4-answer">
-                        <p>Protecting against deepfakes involves being cautious about sharing personal information online, using reputable sources, and staying informed about advancements in deepfake detection.</p>
+                        <p>Protecting against deepfakes involves being cautious about sharing personal information
+                            online, using reputable sources, and staying informed about advancements in deepfake
+                            detection.</p>
                     </div>
                 </div>
             </div>
-            
+
 
 
             <div class="articles-section">
@@ -211,6 +245,20 @@
                     <a href="https://link.springer.com/article/10.1007/s13735-022-00241-w">A literature review and
                         perspectives in deepfakes: generation, detection, and applications</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <h2>YouTube Videos</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/llVoaZXtvEo" frameborder="0"
+                    allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pkF3m5wVUYI" frameborder="0"
+                    allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BuufkPTFt0E" frameborder="0"
+                    allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/kYeLBZMTLjk?si=5YihL3i86le_bqin" frameborder="0"
+                    allowfullscreen></iframe>
             </div>
         </div>
 
